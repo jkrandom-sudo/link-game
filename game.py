@@ -181,7 +181,7 @@ def play_sound(sound_type='match'):
 
 def clear_screen():
     """Clear the terminal screen."""
-    os.system('cls||clear')
+    os.system('clear 2>/dev/null || cls 2>/dev/null || true')
 
 
 def move_cursor(r, c):
