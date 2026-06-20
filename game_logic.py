@@ -131,6 +131,11 @@ class Game:
         BFS path finding with at most 2 turns.
         Returns list of (r,c) from start to end, or None if no path.
         """
+        # Bounds checking
+        if not (0 <= r1 < self.rows and 0 <= c1 < self.cols):
+            return None
+        if not (0 <= r2 < self.rows and 0 <= c2 < self.cols):
+            return None
         if (r1, c1) == (r2, c2):
             return None
         if self.board[r1][c1] == 0 or self.board[r2][c2] == 0:
@@ -258,6 +263,11 @@ class Game:
         Attempt to match two tiles.
         Returns dict with result info, or None if invalid.
         """
+        # Bounds checking
+        if not (0 <= r1 < self.rows and 0 <= c1 < self.cols):
+            return None
+        if not (0 <= r2 < self.rows and 0 <= c2 < self.cols):
+            return None
         if self.board[r1][c1] == 0 or self.board[r2][c2] == 0:
             return None
         if self.board[r1][c1] != self.board[r2][c2]:
